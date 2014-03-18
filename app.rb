@@ -100,12 +100,14 @@ class Quick < Sinatra::Base
     newuser.username = params['user']['username']
     newuser.password=  params['user']['password']
     newuser.save!
-
+=begin
     if session[:return_to].nil?
       redirect '/'
     else
       redirect session[:return_to]
     end
+=end
+      redirect '/'
   end
 
 
