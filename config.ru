@@ -1,3 +1,14 @@
-require './app'
+require './torii/app'
+require './sampleapp/app'
+=begin
+map '/' do
+use Torii
+use SampleApp#.new
+run Torii#.new
+end
+=end
 
-run Quick 
+use Torii
+use SampleApp
+run Torii
+
