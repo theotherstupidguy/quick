@@ -114,7 +114,8 @@ end
       redirect session[:return_to]
     end
 =end
-      redirect '/'
+    env['warden'].authenticate!
+    redirect '/'
   end
 
 
