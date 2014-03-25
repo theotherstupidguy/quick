@@ -1,14 +1,15 @@
-require './torii/app'
-require './sampleapp/app'
-=begin
-map '/' do
-use Torii
-use SampleApp#.new
-run Torii#.new
+require './apps/torii/app'
+require './apps/sampleapp/app'
+
+require 'sprockets'
+
+
+map '/assets' do
+  environment = Sprockets::Environment.new                                   
+  environment.append_path 'ui/assets/' 
+  run environment
 end
-=end
 
 use Torii
 use SampleApp
 run Torii
-
